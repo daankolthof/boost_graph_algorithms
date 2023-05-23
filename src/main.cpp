@@ -95,7 +95,7 @@ int main() {
 	file.open("measurements.tsv", std::ios::out | std::ios::trunc);
 	file << "V\tadj_list (micros)\tadj_matrix (micros)" << std::endl;
 
-	for (std::size_t v = 500; v <= 6'000; v += 250) {
+	for (std::size_t v = 500; v <= 10'000; v += 250) {
 		for (std::size_t i = 0; i < 5; i++) {
 			const auto [total_micros_adj_list, total_micros_adj_matrix] = do_measurement(v);
 			file << v << "\t" << total_micros_adj_list << "\t" << total_micros_adj_matrix << std::endl;
