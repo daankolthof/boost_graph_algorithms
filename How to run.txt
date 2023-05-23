@@ -1,0 +1,8 @@
+1. Make sure G++ is somewhat up-to-date (>=7)
+
+
+2. Download, build and install Boost
+
+
+3. Run cmake -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_BUILD_TYPE=Release .
+
