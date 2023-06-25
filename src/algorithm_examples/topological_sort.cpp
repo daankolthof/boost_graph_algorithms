@@ -26,7 +26,6 @@ void topological_sort() {
     using vertex_descriptor = boost::graph_traits<undirected_unweighted_graph>::vertex_descriptor;
 
     undirected_unweighted_graph g(edges.cbegin(), edges.cend(), vertex_count);
-
     std::array<vertex_descriptor, vertex_count> result_order;
 
     // A correct order would be: {3, 4, 1, 5, 6, 2, 0}

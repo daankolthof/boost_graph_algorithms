@@ -52,15 +52,10 @@ void a_star() {
             boost::edge_weight_t,
             std::size_t>>;
 
-    using WeightMap = boost::property_map< undirected_unweighted_graph, boost::edge_weight_t >::type;
-
     undirected_unweighted_graph g(edges.cbegin(), edges.cend(), edge_weights.cbegin(), vertex_count);
 
     astar_visitor_impl vis;
     astar_heuristic_impl<undirected_unweighted_graph, std::size_t> heur;
-
-    std::vector< undirected_unweighted_graph::vertex_descriptor > predecessor_map(num_vertices(g));
-    std::vector< std::size_t > distance_map(num_vertices(g));
 
     // Expected order: {0, 2, 6, 5, 1, 4, 3}
     boost::astar_search(

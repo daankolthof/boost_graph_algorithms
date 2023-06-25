@@ -29,11 +29,9 @@ void bfs() {
            3  4  5   6
     */
 	const std::array<edge_tuple, edge_count> edges = { { {0, 1}, {0, 2}, {1, 3}, {1, 4}, {2, 5}, {2, 6} } };
-
 	using undirected_unweighted_graph = boost::adjacency_list<boost::listS, boost::vecS, boost::directedS>;
 
     undirected_unweighted_graph g(edges.cbegin(), edges.cend(), vertex_count);
-
     bfs_visitor_impl vis;
 
     // A correct order would be: {0, 1, 2, 3, 4, 5, 6}
